@@ -1,0 +1,77 @@
+<!doctype html>
+<html class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+ 
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+  </style>
+</head>
+
+<body class="h-full dark:bg-gray-900 overflow-x-hidden">
+  
+  <header id="header" class="flex items-center justify-between transitio pr-5 border-b border-b-1 border-b-gray-200 dark:border-b-gray-700 dark:bg-gray-900">
+    <a href="./"><img src="../assets/logo.svg" alt="Logo" class="h-16"></a>
+    <nav class="flex gap-10 items-center">
+      <a href="./" class="text-lg font-['Roboto',Arial,sans-serif] font-bold hover:text-stone-800 dark:text-white dark:hover:text-stone-300">Home</a>
+      <a href="./" class="text-lg font-['Roboto',Arial,sans-serif] font-bold hover:text-stone-800 dark:text-white dark:hover:text-stone-300">Projects</a>
+      <a href="./" class="text-lg font-['Roboto',Arial,sans-serif] font-bold hover:text-stone-800 dark:text-white dark:hover:text-stone-300">About</a>
+      <a href="./"><i class="fa-brands fa-github text-xl dark:text-white"></i></a>
+      <a id="moonBtn" class="cursor-pointer" ><i class="fa-solid fa-moon text-xl dark:text-white"></i></a>
+      <a id="sunBtn" class="hidden cursor-pointer"><i class="fa-solid fa-sun text-xl dark:text-white"></i></a>
+    </nav>
+  </header>
+
+  <main
+    class="flex justify-between relative min-h-screen p-10 text-gray-900 dark:text-white dark:[--dot-color:#2a2f3a] [--dot-color:#d1d5db] dark:[--glow:#0c1a45] [--glow:#bfdbfe]"
+    style="
+      background-image:
+        radial-gradient(circle at top center, var(--glow), transparent),
+        radial-gradient(var(--dot-color) 1px, transparent 1px);
+      background-size:
+        100% 100%,
+        20px 20px;
+      background-repeat: no-repeat, repeat;
+    "
+  >
+
+  <!-- Background Animation -->
+    <span id="horiz-line" class="absolute w-4 -z-10 h-1 top-56 right-0 bg-blue-400 drop-shadow-[0_0_10px_blue] dark:drop-shadow-[0_0_10px_cyan] dark:bg-blue-800"></span>
+    <span id="n1" class="vert-line absolute -z-10 w-1 h-4 bottom-0 right-16 bg-blue-400 drop-shadow-[0_0_10px_blue] dark:drop-shadow-[0_0_10px_cyan] dark:bg-blue-800"></span>
+    <span id="n2" class="vert-line absolute -z-10 w-1 h-4 bottom-0 right-56 bg-blue-400 drop-shadow-[0_0_10px_blue] dark:drop-shadow-[0_0_10px_cyan] dark:bg-blue-800"></span>
+
+  <!-- Content -->
+    <div class="content">
+      <h1 class="cont-elmnt text-4xl font-bold">
+      Hello, I am <br />
+      <span class="text-5xl text-blue-700 dark:text-blue-800">
+      Abdelhadi
+      </span>
+      </h1>
+      <p class="cont-elmnt pt-5 text-lg text-gray-500 dark:text-gray-400">Creating Responsive, Modern Websites.</p>
+    </div>
+
+
+    <div class="tools flex w-96 relative">
+      <img src="../assets/javascript.svg" alt="Javascript Logo" class="h-16 rounded shadow-md absolute top-20 right-16">
+      <img src="../assets/vite.svg" alt="Vite Logo" class="h-16 rounded shadow-md absolute top-30 right-20 bg-white border border-1 border-gray-200 dark:border-gray-700 p-2 dark:bg-gray-800">
+      <img src="../assets/tailwindcss.svg" alt="TailwindCSS Logo" class="h-16 w-16 rounded shadow-md absolute top-10 left-32 bg-white border border-1 border-gray-200 dark:border-gray-700 p-2 dark:bg-gray-800">
+      <img src="../assets/git.svg" alt="Git Logo" class="h-16 w-16 rounded shadow-md absolute top-44 left-40 bg-white border border-1 border-gray-200 dark:border-gray-700 p-2 dark:bg-gray-800">
+      <img src="../assets/gsap.svg" alt="Git Logo" class="h-16 w-16 rounded shadow-md absolute top-20 left-0 bg-white border border-1 border-gray-200 dark:border-gray-700 p-2 dark:bg-gray-800">
+    </div>
+
+  </main>
+
+  <section>
+    <h2>Second Section</h2>
+    <div class="h-16"></div>
+  </section>
+
+
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
