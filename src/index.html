@@ -8,25 +8,51 @@
  
   <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+  * {
+    scroll-behavior: smooth;
+  }
   </style>
+  <title>Abdelhadi Portfolio</title>
+  <link rel="shortcut icon" href="assets/logo.svg" type="image/x-icon">
 </head>
 
-<body class="h-full dark:bg-gray-900 overflow-x-hidden">
+<body class="h-full dark:bg-gray-900 overflow-x-hidden font-['Roboto',Arial,sans-serif]">
   
   <header id="header" class="flex items-center justify-between transitio pr-5 border-b border-b-1 border-b-gray-200 dark:border-b-gray-700 dark:bg-gray-900">
-    <a href="./"><img src="../assets/logo.svg" alt="Logo" class="h-16"></a>
+    <a href="./"><img src="assets/logo.svg" alt="Logo" class="h-16"></a>
     <nav class="flex gap-10 items-center">
-      <a href="./" class="text-lg font-['Roboto',Arial,sans-serif] font-bold hover:text-stone-800 dark:text-white dark:hover:text-stone-300">Home</a>
-      <a href="./" class="text-lg font-['Roboto',Arial,sans-serif] font-bold hover:text-stone-800 dark:text-white dark:hover:text-stone-300">Projects</a>
-      <a href="./" class="text-lg font-['Roboto',Arial,sans-serif] font-bold hover:text-stone-800 dark:text-white dark:hover:text-stone-300">About</a>
-      <a href="./"><i class="fa-brands fa-github text-xl dark:text-white"></i></a>
+      <a href="./" class="text-lg font-bold hover:text-stone-800 dark:text-white dark:hover:text-stone-300 hidden sm:inline">Home</a>
+      <a href="#about" class="text-lg font-bold hover:text-stone-800 dark:text-white dark:hover:text-stone-300 hidden sm:inline">About</a>
+      <a href="#skills" class="text-lg font-bold hover:text-stone-800 dark:text-white dark:hover:text-stone-300 hidden sm:inline">Skills</a>
+      <!-- <a href="./" class="text-lg font-bold hover:text-stone-800 dark:text-white dark:hover:text-stone-300 hidden sm:inline">Projects</a> -->
+      <a href="#contact" class="text-lg font-bold hover:text-stone-800 dark:text-white dark:hover:text-stone-300 hidden sm:inline">Contact</a>
+
+      <a href="https://github.com/Abdelhadi360/"><i class="fa-brands fa-github text-xl dark:text-white"></i></a>
       <a id="moonBtn" class="cursor-pointer" ><i class="fa-solid fa-moon text-xl dark:text-white"></i></a>
       <a id="sunBtn" class="hidden cursor-pointer"><i class="fa-solid fa-sun text-xl dark:text-white"></i></a>
+      <a id="barBtn" class="sm:hidden cursor-pointer"><i class="fa-solid fa-bars text-xl dark:text-white" onclick="" ></i></a>
     </nav>
   </header>
 
+  <div id="backdrop" class="fixed inset-0 bg-black z-40 opacity-0 duration-500 hidden"></div>
+
+  <aside id="sideBar" class="flex flex-col gap-5 fixed top-0 right-0 bottom-0 w-80 h-screen p-5 translate-x-80 opacity-0 z-50 shadow-2xl bg-slate-100 dark:bg-gray-800 ">
+
+     <a id="xBtn" class="self-end cursor-pointer"><i class="fa-solid fa-xmark text-2xl dark:text-white" onclick="" ></i></a>
+
+      <nav class="flex flex-col gap-10 items-start">
+        <a href="./" class="text-lg font-bold hover:text-stone-800 dark:text-white dark:hover:text-stone-300">Home</a>
+        <a href="#about" class="text-lg font-bold hover:text-stone-800 dark:text-white dark:hover:text-stone-300">About</a>
+        <a href="#skills" class="text-lg font-bold hover:text-stone-800 dark:text-white dark:hover:text-stone-300">Skills</a>
+        <!-- <a href="./" class="text-lg font-bold hover:text-stone-800 dark:text-white dark:hover:text-stone-300">Projects</a> -->
+         <a href="#contact" class="text-lg font-bold hover:text-stone-800 dark:text-white dark:hover:text-stone-300">Contact</a>
+    </nav>
+
+  </aside>
+
   <main
-    class="flex justify-between relative min-h-screen p-10 text-gray-900 dark:text-white dark:[--dot-color:#2a2f3a] [--dot-color:#d1d5db] dark:[--glow:#0c1a45] [--glow:#bfdbfe]"
+    class="flex flex-col md:flex-row md:justify-between relative min-h-screen p-10 text-gray-900 dark:text-white dark:[--dot-color:#2a2f3a] [--dot-color:#d1d5db] dark:[--glow:#0c1a45] [--glow:#bfdbfe]"
     style="
       background-image:
         radial-gradient(circle at top center, var(--glow), transparent),
@@ -45,32 +71,118 @@
 
   <!-- Content -->
     <div class="content">
-      <h1 class="cont-elmnt text-4xl font-bold">
+      <h1 class="cont-elmnt text-3xl sm:text-4xl font-bold">
       Hello, I am <br />
-      <span class="text-5xl text-blue-700 dark:text-blue-800">
+      <span class="text-4xl sm:text-5xl text-blue-700 dark:text-blue-800">
       Abdelhadi
       </span>
       </h1>
-      <p class="cont-elmnt pt-5 text-lg text-gray-500 dark:text-gray-400">Creating Responsive, Modern Websites.</p>
+      <p class="cont-elmnt pt-5 text-base sm:text-lg text-gray-500 dark:text-gray-400">Creating Responsive, Modern Websites.</p>
     </div>
 
-
-    <div class="tools flex w-96 relative">
-      <img src="../assets/javascript.svg" alt="Javascript Logo" class="h-16 rounded shadow-md absolute top-20 right-16">
-      <img src="../assets/vite.svg" alt="Vite Logo" class="h-16 rounded shadow-md absolute top-30 right-20 bg-white border border-1 border-gray-200 dark:border-gray-700 p-2 dark:bg-gray-800">
-      <img src="../assets/tailwindcss.svg" alt="TailwindCSS Logo" class="h-16 w-16 rounded shadow-md absolute top-10 left-32 bg-white border border-1 border-gray-200 dark:border-gray-700 p-2 dark:bg-gray-800">
-      <img src="../assets/git.svg" alt="Git Logo" class="h-16 w-16 rounded shadow-md absolute top-44 left-40 bg-white border border-1 border-gray-200 dark:border-gray-700 p-2 dark:bg-gray-800">
-      <img src="../assets/gsap.svg" alt="Git Logo" class="h-16 w-16 rounded shadow-md absolute top-20 left-0 bg-white border border-1 border-gray-200 dark:border-gray-700 p-2 dark:bg-gray-800">
+    <!-- Draggables -->
+    <div class="tools flex h-96 md:w-96 relative">
+      <img src="assets/vite.svg" alt="Vite Logo" class="h-16 rounded shadow-md absolute top-5 right-20 bg-white border border-1 border-gray-200 dark:border-gray-700 p-2 dark:bg-gray-800">
+      <img src="assets/javascript.svg" alt="JavaScript Logo" class="h-16 rounded shadow-md absolute top-32 right-5 bg-white border border-1 border-gray-200 dark:border-gray-700 p-2 dark:bg-gray-800">
+      <img src="assets/tailwindcss.svg" alt="TailwindCSS Logo" class="h-16 w-16 rounded shadow-md absolute top-10 left-32 bg-white border border-1 border-gray-200 dark:border-gray-700 p-2 dark:bg-gray-800">
+      <img src="assets/git.svg" alt="Git Logo" class="h-16 w-16 rounded shadow-md absolute top-44 left-40 bg-white border border-1 border-gray-200 dark:border-gray-700 p-2 dark:bg-gray-800">
+      <img src="assets/gsap.svg" alt="Git Logo" class="h-16 w-16 rounded shadow-md absolute top-20 left-0 bg-white border border-1 border-gray-200 dark:border-gray-700 p-2 dark:bg-gray-800">
     </div>
 
   </main>
 
-  <section>
-    <h2>Second Section</h2>
-    <div class="h-16"></div>
+  <section id="about" class="relative pb-5 sm:pb-10 bg-gray-50 dark:bg-gray-800">
+    <span class="scrol-bar absolute right-0 w-[3px] h-10 bg-blue-700 dark:bg-blue-400 drop-shadow-[0_0_10px_blue] dark:drop-shadow-[0_0_10px_cyan]"></span>
+    <h2 class="text-3xl py-5 dark:text-white text-center">About Me</h2>
+    <p class="text-lg text-gray-600 dark:text-gray-400 px-5 sm:px-10">
+      I'm Abdelhadi a 15-year-old developer from Algeria with a passion for creating modern, engaging digital experiences across multiple platforms.
+      I have practical experience with HTML, CSS, and JavaScript, and I enjoy building user-friendly interfaces that combine clean design with smooth functionality. I also work with tools like TailwindCSS, GSAP, Vite, and Git, which help me build and refine projects more efficiently.<br> <br>
+      Currently, I'm expanding my knowledge of React, React Native, and Electron, as I work toward building more advanced web, mobile, and desktop applications. I'm always exploring new technologies and pushing myself to improve — driven by curiosity and a desire to deliver high-quality, modern solutions.
+    </p>
   </section>
 
+  <section id="skills" class="p-5 sm:p-10 bg-gray-100 dark:bg-gray-700">
+    <h2 class="text-3xl pb-10 dark:text-white text-center">I am skilled at</h2>
+    <div class="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
 
+      <div class="flex flex-col items-center overflow-hidden gap-2 h-30 bg-gray-200 dark:dark:bg-gray-600  border border-1 border-gray-300 rounded dark:border-gray-500">
+        <img src="assets/HTML.svg" alt="HTML Logo" class="h-16 mt-2">
+        <div class="flex flex-col p-2 h-full w-full bg-gray-100 dark:bg-gray-700 border-t border-t-1 border-t-gray-300 dark:border-t-gray-500">
+          <p class="text-2xl font-bold dark:text-white">HTML</p>
+          <p class="text-gray-700 dark:text-gray-300">
+            It gives every website its bones, without it, nothing stands.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center overflow-hidden gap-2 h-30 bg-gray-200 dark:dark:bg-gray-600  border border-1 border-gray-300 rounded dark:border-gray-500">
+        <img src="assets/CSS.svg" alt="CSS Logo" class="h-16 mt-2">
+        <div class="flex flex-col p-2 h-full w-full bg-gray-100 dark:bg-gray-700 border-t border-t-1 border-t-gray-300 dark:border-t-gray-500">
+          <p class="text-2xl font-bold dark:text-white">CSS</p>
+          <p class="text-gray-700 dark:text-gray-300">
+            It makes the web beautiful, responsive, and uniquely styled.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center overflow-hidden gap-2 h-30 bg-gray-200 dark:dark:bg-gray-600 border border-1 border-gray-300 rounded dark:border-gray-500">
+        <img src="assets/javascript.svg" alt="JavaScript Logo" class="h-16 mt-2 rounded">
+        <div class="flex flex-col p-2 h-full w-full bg-gray-100 dark:bg-gray-700 border-t border-t-1 border-t-gray-300 dark:border-t-gray-500">
+          <p class="text-2xl font-bold dark:text-white">JavaScript</p>
+          <p class="text-gray-700 dark:text-gray-300">
+            No modern website feels alive without it.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center overflow-hidden gap-2 h-30 bg-gray-200 dark:dark:bg-gray-600  border border-1 border-gray-300 rounded dark:border-gray-500">
+        <img src="assets/tailwindcss.svg" alt="TailwindCSS Logo" class="h-16 mt-2">
+        <div class="flex flex-col p-2 h-full w-full bg-gray-100 dark:bg-gray-700 border-t border-t-1 border-t-gray-300 dark:border-t-gray-500">
+          <p class="text-2xl font-bold dark:text-white">TailwindCSS</p>
+          <p class="text-gray-700 dark:text-gray-300">
+            Speeds up development and keeps designs consistent.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center overflow-hidden gap-2 h-30 bg-gray-200 dark:dark:bg-gray-600  border border-1 border-gray-300 rounded dark:border-gray-500">
+        <img src="assets/gsap.svg" alt="GSAP Logo" class="h-16 mt-2">
+        <div class="flex flex-col p-2 h-full w-full bg-gray-100 dark:bg-gray-700 border-t border-t-1 border-t-gray-300 dark:border-t-gray-500">
+          <p class="text-2xl font-bold dark:text-white">GSAP</p>
+          <p class="text-gray-700 dark:text-gray-300">
+            Handles complex animations without breaking performance.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center overflow-hidden gap-2 h-30 bg-gray-200 dark:dark:bg-gray-600  border border-1 border-gray-300 rounded dark:border-gray-500">
+        <img src="assets/git.svg" alt="Git Logo" class="h-16 mt-2">
+        <div class="flex flex-col p-2 h-full w-full bg-gray-100 dark:bg-gray-700 border-t border-t-1 border-t-gray-300 dark:border-t-gray-500">
+          <p class="text-2xl font-bold dark:text-white">Git</p>
+          <p class="text-gray-700 dark:text-gray-300">
+            Every project deserves version control, Git handles it.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <h3 class="text-2xl pt-10 dark:text-white text-center">And more...</h3>
+
+  </section>
+
+  <section id="contact" class="p-5 sm:p-10 dark:bg-gray-900">
+    <h2 class="text-3xl pb-5 sm:pb-10 dark:text-white text-center">Let's stay connect</h2>
+    <div class="p-4 h-72 bg-gray-100 dark:bg-gray-700 rounded-3xl sm:rounded-[3rem] flex flex-col gap-8 items-center justify-center border border-1 border-gray-300 dark:border-gray-500">
+      <p class="text-lg text-gray-600 dark:text-gray-300 text-center">Follow me on my official accounts for latest updates!</p>
+      <div class="links flex gap-5">
+        <a href="https://github.com/Abdelhadi360/"><i class="fa-brands fa-github text-3xl sm:text-4xl dark:text-white"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100088047371504"><i class="fa-brands fa-facebook text-3xl sm:text-4xl dark:text-white"></i></a>
+        <a href="https://www.instagram.com/abd_el_hadi_360/"><i class="fa-brands fa-instagram text-3xl sm:text-4xl dark:text-white"></i></a>
+        <a href="https://www.youtube.com/@abdelhadi-360"><i class="fa-brands fa-youtube text-3xl sm:text-4xl dark:text-white"></i></a>
+      </div>
+    </div>
+  </section>
 
   <script type="module" src="app.js"></script>
 </body>
